@@ -13,14 +13,23 @@ class AlmostRequested:
     def get(self, **kwargs) -> requests.Response:
         return self._do_request("get", **kwargs)
 
-    def put(self, **kwargs) -> requests.Response:
-        return self._do_request("put", **kwargs)
+    def head(self, **kwargs) -> requests.Response:
+        return self._do_request("head", **kwargs)
 
     def post(self, **kwargs) -> requests.Response:
         return self._do_request("post", **kwargs)
 
+    def put(self, **kwargs) -> requests.Response:
+        return self._do_request("put", **kwargs)
+
     def delete(self, **kwargs) -> requests.Response:
         return self._do_request("delete", **kwargs)
+
+    def options(self, **kwargs) -> requests.Response:
+        return self._do_request("options", **kwargs)
+
+    def patch(self, **kwargs) -> requests.Response:
+        return self._do_request("patch", **kwargs)
 
     def _do_request(self, verb, **kwargs) -> requests.Response:
         print(verb, self.url, kwargs)
